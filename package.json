@@ -32,6 +32,7 @@
     "react-dom": "^15.1.0",
     "react-loader": "^2.4.0",
     "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
     "react-tap-event-plugin": "^1.0.0",
     "react-tween-state": "^0.1.5",
     "redux": "^3.5.2",

@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./assets/js/common.js",
+  entry: './assets/js/common.js',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -18,5 +18,5 @@ module.exports = {
         }
       }
     ]
-  },
+  }
 };
