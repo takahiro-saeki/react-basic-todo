@@ -1,5 +1,4 @@
-#react-basic-todo
-react.jsの素振り
+#propsとstateの確認
 
 ##USAGE
 ```
