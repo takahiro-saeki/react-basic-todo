@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './page/index';
-import Create from './page/create';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router';
-injectTapEventPlugin();
-document.body.style.margin = 0;
+import Content from './component/content';
 
-ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/template" component={Create} />
-    <Route path="/template/test" component={Create} />
-  </Router>
-  ),
+class Main extends React.Component {
+  render() {
+    return (
+      <section>
+        <Content name='hoge' age={30}/>
+      </section>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Main />,
   document.getElementById('app')
 )
