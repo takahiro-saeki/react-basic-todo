@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './counter';
+import List from './list';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -23,12 +24,10 @@ export default class Main extends React.Component {
   }
 
   hide(e) {
-    console.log(e.target)
     e.target.style.display = 'none';
     this.setState({
       count: this.state.count + 1
     })
-    console.log(this.state.count)
     if (this.state.count === 8) {
       alert('終了！')
       this.setState({
@@ -40,9 +39,10 @@ export default class Main extends React.Component {
       }
     }
   }
+
   render() {
     const lists = this.state.list.map((li, i) => {
-      return <li onClick={this.hide} key={li.id}>{li.name}</li>
+      return <List onClick={this.hide} key={li.id} name={li.name} />
     })
 
     return (
