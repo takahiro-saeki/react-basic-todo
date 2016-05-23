@@ -1,34 +1,55 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Counter from './counter';
 
-export default class Content extends React.Component {
+export default class Main extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      name: this.props.name,
-      age: this.props.age,
-      hobby: this.props.hobby
+      list: [
+        { id: 0, name: 'hoge' },
+        { id: 1, name: 'foo' },
+        { id: 2, name: 'bar' },
+        { id: 3, name: 'ruki' },
+        { id: 4, name: 'reita' },
+        { id: 5, name: 'uruha' },
+        { id: 6, name: 'kai' },
+        { id: 7, name: 'aoi' },
+        { id: 8, name: 'yune' }
+      ],
+      count: 0
+    }
+    this.hide = this.hide.bind(this);
+  }
+
+  hide(e) {
+    console.log(e.target)
+    e.target.style.display = 'none';
+    this.setState({
+      count: this.state.count + 1
+    })
+    console.log(this.state.count)
+    if (this.state.count === 8) {
+      alert('終了！')
+      this.setState({
+        count: 0
+      })
+      const list = document.querySelectorAll('li');
+      for (var i = 0; i < list.length; i++) {
+        list[i].style.display = 'block';
+      }
     }
   }
-
-  static propTypes = {
-    name: React.PropTypes.string.isRequired,
-    age: React.PropTypes.number.isRequired,
-    hobby: React.PropTypes.string.isRequired
-  }
-
-  static defaultProps = {
-    name: 'hiro',
-    age: 24,
-    hobby: 'DanceDanceRevolution'
-  }
-
   render() {
+    const lists = this.state.list.map((li, i) => {
+      return <li onClick={this.hide} key={li.id}>{li.name}</li>
+    })
+
     return (
-      <ul>
-        <li>{this.state.name}</li>
-        <li>{this.state.age}</li>
-        <li>{this.state.hobby}</li>
-      </ul>
+      <section>
+      <Counter count={this.state.count} title='スーパーカウンター' />
+      <ul>{lists}</ul>
+      </section>
     )
   }
 }
