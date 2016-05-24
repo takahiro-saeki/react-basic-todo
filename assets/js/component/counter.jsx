@@ -1,14 +1,6 @@
 import React from 'react';
 
 export default class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: this.props.count,
-      title: this.props.title
-    }
-  }
-
   static defaultProps = {
     count: 0,
     title: 'カウンター'
