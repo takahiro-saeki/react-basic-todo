@@ -10,26 +10,74 @@ export default class Main extends React.Component {
       card: cardData,
       first: {
         type: null,
-        number: null
+        number: null,
+        id: null
       },
       second: {
         type: null,
-        number: null
+        number: null,
+        id: null
       }
     }
+    this.updateCheck = false;
     this.judge = this.judge.bind(this);
+    this.check = this.check.bind(this);
+    this.reverses = this.reverses.bind(this);
+    this.defalutBack = this.defalutBack.bind(this);
   }
 
   componentDidUpdate() {
-    if(this.state.first.number === this.state.second.number) {
-      console.log('カードをオープンしたままにする');
-      console.log(this.state.first)
-      console.log(this.state.second)
-    } else {
-      console.log('カードを裏返す');
-      console.log(this.state.first)
-      console.log(this.state.second)
+    console.log(this.state.first)
+    console.log(this.state.second)
+    if (this.updateCheck === true) {
+      this.updateCheck = false;
+      return false;
     }
+    if(this.state.first.number === this.state.second.number) {
+      this.check()
+    } else if(this.state.first.number !== this.state.second.number && this.state.second.number !== null) {
+      this.reverses();
+    } else {
+      console.log('test')
+    }
+  }
+
+  check() {
+    const firstId = this.state.first.id;
+    const secondId = this.state.second.id;
+    this.setState(() => {
+      this.state.card[firstId].check = true
+      this.state.card[secondId].check = true
+      this.updateCheck = true
+    })
+    this.defalutBack()
+  }
+
+  reverses() {
+    const firstId = this.state.first.id;
+    const secondId = this.state.second.id;
+    this.setState(() => {
+      this.state.card[firstId].defaults = true
+      this.state.card[secondId].defaults = true
+      this.updateCheck = true
+    })
+    this.defalutBack();
+  }
+
+  defalutBack() {
+    this.setState({
+      first: {
+        type: null,
+        number: null,
+        id: null
+      },
+      second: {
+        type: null,
+        number: null,
+        id: null
+      }
+    })
+    this.updateCheck = true
   }
 
   judge(e) {
@@ -39,15 +87,16 @@ export default class Main extends React.Component {
       this.setState({
         first: {
           type: e.target.getAttribute('data-type'),
-          number: e.target.getAttribute('data-number')
+          number: e.target.getAttribute('data-number'),
+          id: e.target.getAttribute('data-cardId')
         }
       })
-
     } else if (this.state.first.type !== null && this.state.second.type === null) {
       this.setState({
         second: {
           type: e.target.getAttribute('data-type'),
-          number: e.target.getAttribute('data-number')
+          number: e.target.getAttribute('data-number'),
+          id: e.target.getAttribute('data-cardId')
         }
       })
     } else {
@@ -58,11 +107,6 @@ export default class Main extends React.Component {
         console.log(e.target.getAttribute('data-type'))
         console.log(e.target.getAttribute('data-number'))
 
-    this.state.card.map((card,i) => {
-      if(card.defaults === false) {
-        return false;
-      }
-    })
     this.setState(() => this.state.card[cardId].defaults = false)
   }
 
