@@ -1,0 +1,219 @@
+HTML {
+  height:100%;
+  background-attachment:fixed;
+  background-image:-webkit-gradient(linear,left top,left bottom,from(#050),to(#030));
+  background-image:-moz-linear-gradient(-90deg,#050,#030);
+}
+BODY {
+  margin:0;padding:0;
+}
+
+.cards {
+  margin:0;
+  padding:10px;
+}
+.cards > LI {
+  background:-webkit-gradient(linear,left top,center bottom,from(#fff),color-stop(.5,#fff),color-stop(.5,#fcfcfc),to(#ccc));
+  background:-moz-linear-gradient(-72deg,#fff,#fff 50%,#fcfcfc 50%,#ccc);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  width:120px;
+  height:160px;
+  -webkit-box-shadow:0 0 4px #000;
+  -moz-box-shadow:0 0 4px #000;
+  text-align:center;
+}
+
+.cards > LI > SPAN {
+  position:absolute;
+  font-size:150%;
+}
+
+.cards > LI.spade,
+.cards > LI.clover {
+  color:#000;
+}
+
+.cards > LI.heart,
+.cards > LI.diamond {
+  color:#c00;
+}
+
+/* one */
+.cards > LI.one > SPAN {
+  font-size:400%;
+  left:50%;margin-left:-0.5em;
+  line-height:160px;
+}
+
+.cards > LI.two > SPAN:nth-child(3),
+.cards > LI.two > SPAN:nth-child(4),
+.cards > LI.three > SPAN:nth-child(3),
+.cards > LI.three > SPAN:nth-child(4),
+.cards > LI.three > SPAN:nth-child(5),
+.cards > LI.five > SPAN:nth-child(7),
+.cards > LI.seven > SPAN:nth-child(9),
+.cards > LI.eight > SPAN:nth-child(9),
+.cards > LI.eight > SPAN:nth-child(10),
+.cards > LI.nine > SPAN:nth-child(11),
+.cards > LI.ten > SPAN:nth-child(11),
+.cards > LI.ten > SPAN:nth-child(12) {
+  left:50%;margin-left:-0.5em;
+}
+
+.cards > LI.four > SPAN:nth-child(3),
+.cards > LI.four > SPAN:nth-child(4),
+.cards > LI.five > SPAN:nth-child(3),
+.cards > LI.five > SPAN:nth-child(4),
+.cards > LI.six > SPAN:nth-child(3),
+.cards > LI.six > SPAN:nth-child(4),
+.cards > LI.six > SPAN:nth-child(5),
+.cards > LI.seven > SPAN:nth-child(3),
+.cards > LI.seven > SPAN:nth-child(4),
+.cards > LI.seven > SPAN:nth-child(5),
+.cards > LI.eight > SPAN:nth-child(3),
+.cards > LI.eight > SPAN:nth-child(4),
+.cards > LI.eight > SPAN:nth-child(5),
+.cards > LI.nine > SPAN:nth-child(3),
+.cards > LI.nine > SPAN:nth-child(4),
+.cards > LI.nine > SPAN:nth-child(5),
+.cards > LI.nine > SPAN:nth-child(6),
+.cards > LI.ten > SPAN:nth-child(3),
+.cards > LI.ten > SPAN:nth-child(4),
+.cards > LI.ten > SPAN:nth-child(5),
+.cards > LI.ten > SPAN:nth-child(6) {
+  left:18%;
+}
+
+.cards > LI.four > SPAN:nth-child(5),
+.cards > LI.four > SPAN:nth-child(6),
+.cards > LI.five > SPAN:nth-child(5),
+.cards > LI.five > SPAN:nth-child(6),
+.cards > LI.six > SPAN:nth-child(6),
+.cards > LI.six > SPAN:nth-child(7),
+.cards > LI.six > SPAN:nth-child(8),
+.cards > LI.seven > SPAN:nth-child(6),
+.cards > LI.seven > SPAN:nth-child(7),
+.cards > LI.seven > SPAN:nth-child(8),
+.cards > LI.eight > SPAN:nth-child(6),
+.cards > LI.eight > SPAN:nth-child(7),
+.cards > LI.eight > SPAN:nth-child(8),
+.cards > LI.nine > SPAN:nth-child(7),
+.cards > LI.nine > SPAN:nth-child(8),
+.cards > LI.nine > SPAN:nth-child(9),
+.cards > LI.nine > SPAN:nth-child(10),
+.cards > LI.ten > SPAN:nth-child(7),
+.cards > LI.ten > SPAN:nth-child(8),
+.cards > LI.ten > SPAN:nth-child(9),
+.cards > LI.ten > SPAN:nth-child(10) {
+  right:18%;
+}
+
+.cards > LI.two > SPAN:nth-child(3),
+.cards > LI.three > SPAN:nth-child(3),
+.cards > LI.four > SPAN:nth-child(3),
+.cards > LI.four > SPAN:nth-child(5),
+.cards > LI.five > SPAN:nth-child(3),
+.cards > LI.five > SPAN:nth-child(5),
+.cards > LI.six > SPAN:nth-child(3),
+.cards > LI.six > SPAN:nth-child(6),
+.cards > LI.seven > SPAN:nth-child(3),
+.cards > LI.seven > SPAN:nth-child(6),
+.cards > LI.eight > SPAN:nth-child(3),
+.cards > LI.eight > SPAN:nth-child(6),
+.cards > LI.nine > SPAN:nth-child(3),
+.cards > LI.nine > SPAN:nth-child(7),
+.cards > LI.ten > SPAN:nth-child(3),
+.cards > LI.ten > SPAN:nth-child(7) {
+  top:8%;
+}
+
+.cards > LI.seven > SPAN:nth-child(9),
+.cards > LI.eight > SPAN:nth-child(9),
+.cards > LI.ten > SPAN:nth-child(11) {
+  top:24%;
+}
+
+.cards > LI.nine > SPAN:nth-child(4),
+.cards > LI.nine > SPAN:nth-child(8),
+.cards > LI.ten > SPAN:nth-child(4),
+.cards > LI.ten > SPAN:nth-child(8) {
+  top:28%;
+}
+
+.cards > LI.three > SPAN:nth-child(4),
+.cards > LI.five > SPAN:nth-child(7),
+.cards > LI.six > SPAN:nth-child(4),
+.cards > LI.six > SPAN:nth-child(7),
+.cards > LI.seven > SPAN:nth-child(4),
+.cards > LI.seven > SPAN:nth-child(7),
+.cards > LI.eight > SPAN:nth-child(4),
+.cards > LI.eight > SPAN:nth-child(7),
+.cards > LI.nine > SPAN:nth-child(11) {
+  line-height:160px;
+}
+
+.cards > LI.nine > SPAN:nth-child(5),
+.cards > LI.nine > SPAN:nth-child(9),
+.cards > LI.ten > SPAN:nth-child(5),
+.cards > LI.ten > SPAN:nth-child(9) {
+  bottom:28%;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+.cards > LI.eight > SPAN:nth-child(10),
+.cards > LI.ten > SPAN:nth-child(12) {
+  bottom:24%;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+.cards > LI.two > SPAN:nth-child(4),
+.cards > LI.three > SPAN:nth-child(5),
+.cards > LI.four > SPAN:nth-child(4),
+.cards > LI.four > SPAN:nth-child(6),
+.cards > LI.five > SPAN:nth-child(4),
+.cards > LI.five > SPAN:nth-child(6),
+.cards > LI.six > SPAN:nth-child(5),
+.cards > LI.six > SPAN:nth-child(8),
+.cards > LI.seven > SPAN:nth-child(5),
+.cards > LI.seven > SPAN:nth-child(8),
+.cards > LI.eight > SPAN:nth-child(5),
+.cards > LI.eight > SPAN:nth-child(8),
+.cards > LI.nine > SPAN:nth-child(6),
+.cards > LI.nine > SPAN:nth-child(10),
+.cards > LI.ten > SPAN:nth-child(6),
+.cards > LI.ten > SPAN:nth-child(10) {
+  bottom:8%;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+/* number */
+.cards > LI > SPAN.number {
+  font-size:100%;
+  line-height:1;
+  margin:0;
+}
+.cards > LI > SPAN.number:nth-child(1) {
+  left:2px;
+  right:auto;
+  top:2px;
+  bottom:auto;
+}
+.cards > LI > SPAN.number:nth-child(2) {
+  left:auto;
+  right:2px;
+  top:auto;
+  bottom:2px;
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+}
+
+/* decoration */
+.cards > LI {
+  display:inline-block;
+  margin:0 -20px 10px 0;
+  position:relative;
+}
