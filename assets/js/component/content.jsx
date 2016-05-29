@@ -1,7 +1,7 @@
 import React from 'react';
 import style from '../../style/style';
 import cardData from '../data/data';
-//import Card from './card';
+import {find} from 'lodash/collection';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -27,8 +27,13 @@ export default class Main extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.first)
-    console.log(this.state.second)
+    if(find(this.state.card, {defaults: true})) {
+      console.log('裏のカードはまだある')
+    } else {
+      setTimeout(alert('ゲーム終了！'), 1000);
+      //alert('ゲーム終了！')
+      return false;
+    }
     if (this.updateCheck === true) {
       this.updateCheck = false;
       return false;
@@ -50,7 +55,7 @@ export default class Main extends React.Component {
       this.state.card[secondId].check = true
       this.updateCheck = true
     })
-    this.defalutBack()
+    this.defalutBack();
   }
 
   reverses() {
@@ -83,6 +88,10 @@ export default class Main extends React.Component {
   judge(e) {
     const type = e.target.getAttribute('data-type');
     const number = e.target.getAttribute('data-number');
+    const defaultCheck = e.target.getAttribute('data-cardId');
+    if(this.state.card[defaultCheck].defaults === false) {
+      return false
+    }
     if(this.state.first.type === null) {
       this.setState({
         first: {
@@ -119,6 +128,7 @@ export default class Main extends React.Component {
         data-type={card.type}
         data-number={card.number}
         data-cardId={card.id}
+        data-check={card.check}
         onClick={this.judge} />
         </li>
       )
