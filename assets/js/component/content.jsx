@@ -30,8 +30,8 @@ export default class Main extends React.Component {
     if(find(this.state.card, {defaults: true})) {
       console.log('裏のカードはまだある')
     } else {
-      setTimeout(alert('ゲーム終了！'), 1000);
-      //alert('ゲーム終了！')
+      //setTimeout(alert('ゲーム終了！'), 1000);
+      alert('ゲーム終了！')
       return false;
     }
     if (this.updateCheck === true) {
